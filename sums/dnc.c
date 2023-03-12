@@ -65,7 +65,6 @@ void* worker(void *arg)
 
     struct thread_data* data = arg;
     data->sum = dnc_sum(data->start, data->size, data->threshold); 
-    printf("Thread sum: %ld\n", data->sum);
     return NULL;
 }
 
