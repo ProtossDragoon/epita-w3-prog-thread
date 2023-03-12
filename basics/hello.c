@@ -19,14 +19,10 @@ int main(int argc, char** argv)
         errx(-1, "The number of threads is not valid.");
     }
 
-    pthread_t* thread = malloc(n_thread * sizeof(pthread_t));
-    if (thread == NULL) {
-        errx(EXIT_FAILURE, "malloc()");
-    }
+    pthread_t thread[n_thread];
     for (long i = 0; i < n_thread; i++) {
         int err = pthread_create(&(thread[i]), NULL, fn_thread, NULL);
         if (err != 0) {
-            free(thread);
             errx(err, "pthread_create()");
         }
     }
@@ -34,7 +30,6 @@ int main(int argc, char** argv)
     for (long i = 0; i < n_thread; i++) {
         pthread_join(thread[i], NULL);
     }
-    free(thread);
     
     return 0;
 }
