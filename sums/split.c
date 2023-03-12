@@ -70,11 +70,7 @@ int main(int argc, char** argv)
         data[i].id = i;
         data[i].start = p_start;
         data[i].sum = 0;
-        long size = n_allocate_per_thread;
-        if (i == (thread_number - 1)) {
-            size = n_left;
-        }
-        data[i].size = size;
+        data[i].size = i == (thread_number - 1)? n_left : n_allocate_per_thread;
         int err = pthread_create(&(data[i].sys_id), NULL, worker, &data[i]);
         if (err != 0) {
             errx(err, "pthread_create()");
