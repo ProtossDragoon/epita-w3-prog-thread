@@ -9,6 +9,9 @@ on:
 jobs:
   basics:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./basics
 
     steps:
 
@@ -16,67 +19,46 @@ jobs:
         uses: actions/checkout@v2
 
       - name: 빌드
-        run: |
-          cd basics
-          make
+        run: make
 
       - name: hello 실행 (1)
-        run: |
-          cd basics
-          ./hello 1
+        run: ./hello 1
 
       - name: hello 실행 (2)
-        run: |
-          cd basics
-          ./hello 3
+        run: ./hello 3
 
       - name: hello 실행 (3)
-        run: |
-          cd basics
-          ./hello 10
+        run: ./hello 10
 
       - name: hello_id 실행 (1)
-        run: |
-          cd basics
-          ./hello_id 1
+        run: ./hello_id 1
 
       - name: hello_id 실행 (2)
-        run: |
-          cd basics
-          ./hello_id 3
+        run: ./hello_id 3
 
       - name: hello_id 실행 (3)
-        run: |
-          cd basics
-          ./hello_id 8
+        run: ./hello_id 8
 
       - name: hello_id 실행 (4)
-        run: |
-          cd basics
-          ./hello_id 15 | sort -V
+        run: ./hello_id 15 | sort -V
 
       - name: hello_id 실행 (5)
-        run: |
-          cd basics
-          ./hello_id 100 | wc -l
+        run: ./hello_id 100 | wc -l
 
       - name: hello_parity 실행 (1)
-        run: |
-          cd basics
-          ./hello_parity 3
+        run: ./hello_parity 3
 
       - name: hello_parity 실행 (2)
-        run: |
-          cd basics
-          ./hello_parity 8
+        run: ./hello_parity 8
 
       - name: hello_parity 실행 (3)
-        run: |
-          cd basics
-          ./hello_parity 50 | grep even | wc -l
+        run: ./hello_parity 50 | grep even | wc -l
 
   sums:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./sums
 
     steps:
 
@@ -84,51 +66,31 @@ jobs:
         uses: actions/checkout@v2
 
       - name: 빌드
-        run: |
-          cd sums
-          make
+        run: make
 
       - name: split 실행 (1)
-        run: |
-          cd sums
-          ./split 100 1
+        run: ./split 100 1
 
       - name: split 실행 (2)
-        run: |
-          cd sums
-          ./split 100 2
+        run: ./split 100 2
 
       - name: split 실행 (3)
-        run: |
-          cd sums
-          ./split 100 3
+        run: ./split 100 3
 
       - name: split 실행 (4)
-        run: |
-          cd sums
-          ./split 100 8
+        run: ./split 100 8
 
       - name: split 실행 (5)
-        run: |
-          cd sums
-          time ./split 1000000000 1
+        run: time ./split 1000000000 1
 
       - name: split 실행 (6)
-        run: |
-          cd sums
-          time ./split 1000000000 2
+        run: time ./split 1000000000 2
 
       - name: split 실행 (7)
-        run: |
-          cd sums
-          time ./split 1000000000 4
+        run: time ./split 1000000000 4
 
       - name: split 실행 (8)
-        run: |
-          cd sums
-          time ./split 1000000000 8
+        run: time ./split 1000000000 8
 
       - name: split 실행 (9)
-        run: |
-          cd sums
-          time ./split 1000000000 16
+        run: time ./split 1000000000 16
