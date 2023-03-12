@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "basics/hello build by Makefile",
+            "type": "shell",
+            "command": "cd basics && make clean && make hello",
+        },
+        {
+            "label": "basics/hello_id build by Makefile",
+            "type": "shell",
+            "command": "cd basics && make clean && make hello_id",
+        },
+        {
+            "label": "basics/hello_parity build by Makefile",
+            "type": "shell",
+            "command": "cd basics && make clean && make hello_parity",
+        },
+        {
+            "label": "sums/split build by Makefile",
+            "type": "shell",
+            "command": "cd sums && make clean && make split",
+        },
+        {
+            "label": "sums/dnc build by Makefile",
+            "type": "shell",
+            "command": "cd sums && make clean && make dnc",
+        },
+    ]
+}

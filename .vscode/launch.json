@@ -1,0 +1,50 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "debug: basics/hello",
+            "program": "${workspaceFolder}/basics/hello",
+            "args": ["10"],
+            "cwd": "${workspaceFolder}/basics",
+            "preLaunchTask": "basics/hello build by Makefile",
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "debug: basics/hello_id",
+            "program": "${workspaceFolder}/basics/hello_id",
+            "args": ["15"],
+            "cwd": "${workspaceFolder}/basics",
+            "preLaunchTask": "basics/hello_id build by Makefile",
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "debug: basics/hello_parity",
+            "program": "${workspaceFolder}/basics/hello_parity",
+            "args": ["8"],
+            "cwd": "${workspaceFolder}/basics",
+            "preLaunchTask": "basics/hello_parity build by Makefile",
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "debug: sums/split",
+            "program": "${workspaceFolder}/sums/split",
+            "args": ["64", "4"],
+            "cwd": "${workspaceFolder}/sums",
+            "preLaunchTask": "sums/split build by Makefile",
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "debug: sums/dnc",
+            "program": "${workspaceFolder}/sums/dnc",
+            "args": [],
+            "cwd": "${workspaceFolder}/sums",
+            "preLaunchTask": "sums/dnc build by Makefile",
+        },
+    ]
+}
