@@ -88,5 +88,8 @@ int main(int argc, char** argv)
         sum += data[i].sum;
     }
     printf("Sum......: %ld\n", sum);
+    
+    free(bytes);
+    return 0;
 }
 
