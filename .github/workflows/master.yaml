@@ -94,3 +94,30 @@ jobs:
 
       - name: split 실행 (9)
         run: time ./split 1000000000 16
+
+      - name: dnc 실행 (1)
+        run: ./dnc 100 1
+
+      - name: dnc 실행 (2)
+        run: ./dnc 100 2
+
+      - name: dnc 실행 (3)
+        run: ./dnc 100 3
+
+      - name: dnc 실행 (4)
+        run: ./dnc 100 8
+
+      - name: dnc 실행 (5)
+        run: time ./dnc 1000000000 1
+
+      - name: dnc 실행 (6)
+        run: time ./dnc 1000000000 2
+
+      - name: dnc 실행 (7)
+        run: time ./dnc 1000000000 4
+
+      - name: dnc 실행 (8)
+        run: time ./dnc 1000000000 8
+
+      - name: dnc 실행 (9)
+        run: time ./dnc 1000000000 16
